@@ -50,7 +50,7 @@ Contents</h2>
 
 <div class="toc">
 <ul>
-  <li><a href="#Introducti">Introduction</a> 
+  <li><a href="#Introducti">Introduction</a>
     <ul>
       <li><a href="#What">What is PEF?</a></li>
       <li><a href="#there">Why is PEF Necessary?</a></li>
@@ -63,7 +63,7 @@ Contents</h2>
       <li><a href="#Future">Further Development</a></li>
     </ul>
   </li>
-  <li><a href="#Definition">Definitions</a> 
+  <li><a href="#Definition">Definitions</a>
     <ul>
       <li><a href="#Terminolog">Terminology</a></li>
       <li><a href="#General">General Terms</a></li>
@@ -71,10 +71,10 @@ Contents</h2>
       <li><a href="#Relationsh11">Relationship to Other Specifications</a></li>
     </ul>
   </li>
-  <li><a href="#Normative">Definition of PEF 1.0</a> 
+  <li><a href="#Normative">Definition of PEF 1.0</a>
     <ul>
       <li><a href="#Document">Document Conformance </a></li>
-      <li><a href="#User">User Agent Conformance</a> 
+      <li><a href="#User">User Agent Conformance</a>
         <ul>
           <li><a href="#Processing">Processing Unknown Content</a></li>
         </ul>
@@ -85,7 +85,7 @@ Contents</h2>
       <li><a href="#Internet">Internet Media Type and File Extension</a></li>
     </ul>
   </li>
-  <li><a href="#Elements">Elements</a> 
+  <li><a href="#Elements">Elements</a>
     <ul>
       <li><a href="#pef">pef</a></li>
       <li><a href="#head">head</a></li>
@@ -100,13 +100,13 @@ Contents</h2>
   </li>
   <li><a href="#Error1">Metadata Extension</a></li>
   <li><a href="#Error11">Error Handling</a></li>
-  <li><a href="#Rule">Rule Sets</a> 
+  <li><a href="#Rule">Rule Sets</a>
     <ul>
       <li><a href="#Relax">Relax NG Rule Set</a></li>
       <li><a href="#Schema1">DTD Rule Set</a></li>
     </ul>
   </li>
-  <li><a href="#References">References</a> 
+  <li><a href="#References">References</a>
     <ul>
       <li><a href="#Normative1">Normative References</a></li>
       <li><a href="#Informativ">Informative References</a></li>
@@ -412,7 +412,7 @@ processes unknown content:</p>
 <ol>
   <li>If the unknown contents is an element, all node children, except text
     node children, must be processed. Using XPath in the context of the unknown
-    element, this can be expressed as: 
+    element, this can be expressed as:
     <p><code>node()[not(self::text())]</code></p>
     <p>For example, a user agent should read</p>
     <p><samp xml:space="preserve">...</samp><br />
@@ -644,6 +644,17 @@ the [<a class="nref" href="#ref-dublincore">Dublin Core</a>] namespace.</p>
     <dd>page</dd>
   <dt>Value</dt>
     <dd>A string containing Unicode braille patterns.</dd>
+  <dt>Child elements</dt>
+    <dd>metadata (zero or more)</dd>
+</dl>
+
+<h3 id="metadata">metadata</h3>
+<dl>
+  <dt>Description</dt>
+    <dd>The metadata element defines specific data that is carried through the
+      framework from generators of OBFL.</dd>
+  <dt>Parent element</dt>
+    <dd>row</dd>
 </dl>
 
 <h2 id="Error1">Metadata Extension</h2>
@@ -699,7 +710,7 @@ fallback behaviour is acceptable under the following circumstances:</p>
     <dd>The user agent may disregard volume information and continue
       processing. The user agent may prompt the user before continuing.</dd>
   <dt>The user agent cannot process braille patterns in range 2840-28FF</dt>
-    <dd>The user agent may prompt the user for one of the following actions: 
+    <dd>The user agent may prompt the user for one of the following actions:
       <ol>
         <li>ignore unsupported braille patterns (rows will be shortened)</li>
         <li>replace unsupported braille patterns with a fixed replacement, e.g.
